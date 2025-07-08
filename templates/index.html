@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student list</title>
+  </head>
+  <body>
+    <h2>Student list</h2>
+    <a href="/create">Add Student</a>
+    <table border="" width="100%">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Actions</th>
+      </tr>
+      {% for s in students %}
+      <tr>
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.age}}</td>
+        <td>{{s.grade}}</td>
+        <td>
+          <a href="{{ url_for('update', id=s.id) }}">Edit</a> |
+          <a href="{{ url_for('delete', id=s.id) }}">Delete</a> l̥
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

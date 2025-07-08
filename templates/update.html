@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Student</title>
+  </head>
+  <body>
+    <h2>Edit Student</h2>
+    <form method="POST">
+      Name:<input
+        type="text"
+        name="name"
+        value="{{student.name}}"
+        required
+      /><br />
+      Age:<input
+        type="number"
+        name="age"
+        value="{{student.age}}"
+        required
+      /><br />
+      Grade:<input
+        type="text"
+        name="grade"
+        value="{{student.grade}}"
+        required
+      /><br />
+
+      <input type="submit" value="Update" />
+    </form>
+    <a href="{{ url_for('index_page') }}">Back</a>
+  </body>
+</html>
