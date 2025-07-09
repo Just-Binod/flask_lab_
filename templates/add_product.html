@@ -1,0 +1,30 @@
+{% extends 'base.html'%} {%block title%}add product{%endblock%} {%block
+content%}
+<h1>Add Product</h1>
+<form action="{{url_for('add_product')}}" method="post">
+  <label for="" class="form-label">Category:</label>
+  <select class="form-select" name="category_id">
+    <option selected>Select Category</option>
+    {%for c in category%}
+    <option value="{{c.id}}">{{c.name}}</option>
+    {%endfor%}
+  </select>
+
+  <label for="" class="form-label">name:</label>
+  <input type="text" class="form form-control" name="name" /><br />
+  <label for="">Qyt</label>
+  <input type="number" class="form form-control" name="qyt" /><br />
+
+  <label for="">Rate</label><br />
+  <input type="number" class="form form-control" name="rate" /><br />
+
+  <label for="">Unit of Measurement</label>
+  <input type="text" class="form form-control" name="unit" /><br />
+  <input
+    type="submit"
+    class="btn btn-success"
+    name="measurement"
+    value="Create"
+  />
+</form>
+{%endblock%}
