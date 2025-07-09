@@ -12,10 +12,16 @@ db=SQLAlchemy(app)
 
 # Model
 
-class Student(db.Model):
+# class Student(db.Model):
+#     id=db.Column(db.Integer,primary_key=True)
+#     name=db.Column(db.String(100),nullable=False)
+#     age=db.Column(db.Integer,nullable=False)
+#     grade=db.Column(db.String(200),nullable=False)
+
+class Category (db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    name=db.Column(db.String(100),nullable=False)
-    age=db.Column(db.Integer,nullable=False)
+    code=db.Column(db.String(20),nullable=False)
+    name=db.Column(db.Integer,nullable=False)
     grade=db.Column(db.String(200),nullable=False)
 
 @app.route('/')
